@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<mx:WindowedApplication xmlns:mx="http://www.adobe.com/2006/mxml"
+	initialize="onInit()">
+	
+	<mx:Script>
+		<![CDATA[
+		private function onInit():void
+		{
+			trace('hello project');
+		}
+		]]>
+	</mx:Script>
+</mx:WindowedApplication>
