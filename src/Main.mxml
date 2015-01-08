@@ -26,10 +26,13 @@
 		{
 			dispatchEvent(new ShellEvent(ShellEvent.OPEN_FILE));
 		}
+		
 		]]>
 	</fx:Script>
 	<fx:Declarations>
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
 	<mx:Button x="10" y="10" label="Open" click="onClick()"/>
+	<mx:Button id="SaveBtn" x="10" y="40" label="Save"/>
+	<mx:Button id="SaveAsBtn" x="10" y="70" label="Save As ..."/>
 </s:WindowedApplication>

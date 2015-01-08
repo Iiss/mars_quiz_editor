@@ -10,6 +10,8 @@ package
 	import robotlegs.bender.framework.api.IInjector;
 	import mvc.mediators.MainViewMediator;
 	import mvc.commands.OpenCommand;
+	import mvc.commands.SaveCommand;
+	import mvc.commands.SaveAsCommand;
 	import mvc.events.ShellEvent;
 	import Main
 	/**
@@ -46,6 +48,8 @@ package
 			
 			//Events
 			eventCommandMap.map(ShellEvent.OPEN_FILE, ShellEvent).toCommand(OpenCommand);
+			eventCommandMap.map(ShellEvent.SAVE_FILE, ShellEvent).toCommand(SaveCommand);
+			eventCommandMap.map(ShellEvent.SAVE_FILE_AS, ShellEvent).toCommand(SaveAsCommand);
 		}
 		
 	}
