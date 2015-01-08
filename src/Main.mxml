@@ -1,17 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009"
                        xmlns:s="library://ns.adobe.com/flex/spark"
-                       xmlns:mx="library://ns.adobe.com/flex/mx">
+                       xmlns:mx="library://ns.adobe.com/flex/mx"
+					   initialize="onInit()">
 	<fx:Script>
 		<![CDATA[
+		import mvc.events.ShellEvent;
+		import robotlegs.bender.framework.api.IContext;
+		import bundles.MVCSBundleNoTraceLog;
+		import robotlegs.bender.extensions.contextView.ContextView;
+		import robotlegs.bender.framework.impl.Context;
+
+		protected var context:IContext;
+		
+		private function onInit():void
+		{
+			//setup context
+			context = Context(new Context()
+				.install(MVCSBundleNoTraceLog)
+				.configure(new MainViewConfig())
+				.configure(new ContextView(this)));
+		}
+		
 		private function onClick():void
 		{
-			trace('world!');
+			dispatchEvent(new ShellEvent(ShellEvent.OPEN_FILE));
 		}
 		]]>
 	</fx:Script>
 	<fx:Declarations>
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
-	<mx:Button x="10" y="10" label="Hello" click="onClick()"/>
+	<mx:Button x="10" y="10" label="Open" click="onClick()"/>
 </s:WindowedApplication>
