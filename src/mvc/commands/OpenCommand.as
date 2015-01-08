@@ -3,9 +3,9 @@ package mvc.commands
 	import eu.alebianco.robotlegs.utils.impl.AsyncCommand;
 	import flash.events.Event;
 	import flash.filesystem.File;
+	import flash.filesystem.FileMode;
 	import flash.filesystem.FileStream;
 	import flash.net.FileFilter;
-	import flash.filesystem.FileMode;
 	import mvc.models.QuizModel;
 	/**
 	 * ...

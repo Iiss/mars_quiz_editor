@@ -2,10 +2,13 @@
 <s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009"
                        xmlns:s="library://ns.adobe.com/flex/spark"
                        xmlns:mx="library://ns.adobe.com/flex/mx"
+					   xmlns:views="mvc.views.*"
 					   initialize="onInit()">
+	<s:menu>
+		<views:AppMenu id="menu" />
+	</s:menu>
 	<fx:Script>
 		<![CDATA[
-		import mvc.events.ShellEvent;
 		import robotlegs.bender.framework.api.IContext;
 		import bundles.MVCSBundleNoTraceLog;
 		import robotlegs.bender.extensions.contextView.ContextView;
@@ -21,18 +24,9 @@
 				.configure(new MainViewConfig())
 				.configure(new ContextView(this)));
 		}
-		
-		private function onClick():void
-		{
-			dispatchEvent(new ShellEvent(ShellEvent.OPEN_FILE));
-		}
-		
 		]]>
 	</fx:Script>
 	<fx:Declarations>
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
-	<mx:Button x="10" y="10" label="Open" click="onClick()"/>
-	<mx:Button id="SaveBtn" x="10" y="40" label="Save"/>
-	<mx:Button id="SaveAsBtn" x="10" y="70" label="Save As ..."/>
 </s:WindowedApplication>

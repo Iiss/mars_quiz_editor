@@ -14,6 +14,11 @@ package mvc.commands
 		
 		public function CreateCommand() 
 		{
+			
+		}
+		
+		override public function execute():void 
+		{
 			_model.reset();
 		}
 		

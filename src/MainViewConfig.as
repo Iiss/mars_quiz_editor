@@ -8,12 +8,14 @@ package
 	import robotlegs.bender.extensions.modularity.api.IModuleConnector;
 	import robotlegs.bender.framework.api.IConfig;
 	import robotlegs.bender.framework.api.IInjector;
-	import mvc.mediators.MainViewMediator;
 	import mvc.commands.OpenCommand;
 	import mvc.commands.SaveCommand;
 	import mvc.commands.SaveAsCommand;
+	import mvc.commands.CreateCommand;
+	import mvc.commands.ExitCommand;
 	import mvc.events.ShellEvent;
-	import Main
+	import mvc.views.AppMenu;
+	import mvc.mediators.MainMediator;
 	/**
 	 * ...
 	 * @author liss
@@ -44,12 +46,14 @@ package
 			injector.map(QuizModel).toValue(new QuizModel);
 			
 			//MEDIATORS
-			mediatorMap.map(Main).toMediator(MainViewMediator);
+			mediatorMap.map(Main).toMediator(MainMediator);
 			
 			//Events
+			eventCommandMap.map(ShellEvent.NEW_FILE, ShellEvent).toCommand(CreateCommand);
 			eventCommandMap.map(ShellEvent.OPEN_FILE, ShellEvent).toCommand(OpenCommand);
 			eventCommandMap.map(ShellEvent.SAVE_FILE, ShellEvent).toCommand(SaveCommand);
 			eventCommandMap.map(ShellEvent.SAVE_FILE_AS, ShellEvent).toCommand(SaveAsCommand);
+			eventCommandMap.map(ShellEvent.EXIT, ShellEvent).toCommand(ExitCommand);
 		}
 		
 	}

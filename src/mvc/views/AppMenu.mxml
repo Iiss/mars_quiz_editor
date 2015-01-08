@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:FlexNativeMenu xmlns:mx="http://www.adobe.com/2006/mxml"
+			dataProvider="{myMenuData}" 
+            labelField="@label" keyEquivalentField="@keyEquivalent"
+            showRoot="false">
+	<mx:Script>
+	<![CDATA[
+	
+	public static const NEW:String="new";
+	public static const OPEN:String="open";
+	public static const SAVE:String="save";
+	public static const SAVE_AS:String = "saveAs";
+	public static const EXIT:String = "exit";
+	
+	]]>
+	</mx:Script>
+	 <mx:XML format="e4x" id="myMenuData">
+        <root>
+            <menuitem label="File">
+                <menuitem label="New" command="{NEW}" keyEquivalent="n" controlKey="true"/>
+                <menuitem label="Open..." command="{OPEN}" keyEquivalent="o" controlKey="true"/>
+                <menuitem label="Save" command="{SAVE}" keyEquivalent="s" controlKey="true"/>
+                <menuitem label="Save As..." command="{SAVE_AS}" keyEquivalent="s" controlKey="true" shiftKey="true"/>
+                <menuitem/>
+				<menuitem type="separator"/>
+                <menuitem label="Exit" command="{EXIT}"/>
+            </menuitem>
+        </root>
+    </mx:XML>
+</mx:FlexNativeMenu>

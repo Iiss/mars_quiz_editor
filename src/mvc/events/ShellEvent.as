@@ -12,6 +12,7 @@ package mvc.events
 		public static var OPEN_FILE:String = "ShellEvent.OPEN_FILE";
 		public static var SAVE_FILE:String = "ShellEvent.SAVE_FILE";
 		public static var SAVE_FILE_AS:String = "ShellEvent.SAVE_FILE_AS";
+		public static var EXIT:String = "ShellEvent.EXIT";
 		
 		public function ShellEvent(type:String, bubbles:Boolean=false, cancelable:Boolean=false) 
 		{ 

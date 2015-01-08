@@ -2,9 +2,9 @@ package mvc.commands
 {
 	import eu.alebianco.robotlegs.utils.impl.AsyncCommand;
 	import flash.filesystem.File;
+	import flash.filesystem.FileMode;
 	import flash.filesystem.FileStream;
 	import mvc.models.QuizModel;
-	import flash.filesystem.FileMode;
 	/**
 	 * ...
 	 * @author liss
